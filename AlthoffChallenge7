@@ -1,0 +1,101 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Nov  5 22:46:26 2019
+
+@author: katayamaryotaro
+"""
+
+#Cory Althoff Chapter 7 Challenge
+
+#practice1
+dramas = ["walking dead", "entourage","the sopranos", "vampire diaries"]
+for i in dramas:
+    print(i)
+
+"""
+shows = ["The Walking Dead", "Entourage", "The Sopranos", "The Vampire Diaries"]
+for show in shows:
+    print(show)
+"""
+#ほぼ満点回答か。
+
+#practice2
+for i in range(25,51):
+    print(i)
+"""
+for i in range(25,51):
+    print(i)
+"""
+#満点回答    
+
+#practice3
+for i in range(0, len(dramas)):
+    print(dramas[i])
+"""
+shows = ["The Walking Dead", "Entourage", "The Sopranos", "The Vampire Diaries"]
+for index, show in enumerate(shows):
+    print(index)
+    print(show)
+"""
+#indexも同時に表示。enumerate()はindexも返してくれる。
+
+#practice4
+number_list = [11,12,121,144]
+number = (input("predict a number:"))
+
+try:
+while True:
+    print("if you want quit, input 'q'")
+    if number is in number_list:
+    print("correct!")
+    else:
+        print("incorrect!")
+    if number == q:
+        break
+except ValueError:
+    print(""Invalid input")
+
+"""
+numbers = [11, 32, 33, 15, 1]
+
+while True:
+    answer = input("Guess a number or type q to quit.")
+    if answer == "q":
+        break
+    try:
+        answer = int(answer)
+    except ValueError:
+        print("please type a number or q to quit.")
+    if answer in numbers:
+        print("You guessed correctly!")
+    else:
+        print("You guessed incorrectly!")
+"""
+#inputはwhileループの中で作る。qで停止の説明もループ内。
+#try-exceptを使うなどのアイデアまではよかったが構成に課題。
+
+#practice5
+list1 = [8,19,148,4] 
+list2 = [9,1,33,8]
+result = []
+
+for i in list1:
+    for j in list2:
+        result.append(i*j)
+
+print(result)
+
+"""
+list1 = [8, 19, 148, 4]
+list2 = [9, 1, 33, 83]
+list3 = []
+
+for i in list1:
+    for j in list2:
+        mult = i * j
+        list3.append(i * j)
+
+print(list3)
+"""
+#満点回答か。解答例のmult変数に一度代入しているのにappendはそのままi*jは謎である。

@@ -1,0 +1,102 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Nov  9 17:16:21 2019
+
+@author: katayamaryotaro
+"""
+
+#Cory Althoff Chapter 9 CHallenge
+"""
+import os
+os.path.join("Users", "katayamaryotaro", "st.txt")
+
+my_list = []
+
+st = open("st.txt", "w")
+st.write("Hi from Python")
+st.close()
+
+with open("st.txt", "w") as f:
+    f.write("Hi from Python")
+
+with open("st.txt", "r") as f:
+    print(f.read())
+
+with open("st.txt", "r") as f:
+    my_list.append(f.read())
+
+print(my_list)
+"""
+"""
+import csv
+with open("st.csv", "w", newline='') as f:
+    w = csv.writer(f, delimiter=",")
+    w.writerow(["one","two","three"])
+    w.writerow(["four","five","six"])
+    
+with open("st.csv", "r")as f:
+    r = csv.reader(f, delimiter=",")
+    for row in r:
+        print(",".join(row))
+"""
+
+#practice1
+import csv
+with open("New_file.csv","r", encoding="cp932") as f:
+    r = csv.reader(f, delimiter=",")
+    for row in r:
+        print(",".join(row))
+
+
+#practice2
+with open("questions.txt", "w") as f:
+    f.write("Are you happy?")
+
+with open("questions.txt", "r") as f:
+    print(f.read())
+"""
+answer = input("What is your favorite color?")
+with open("fav_color.txt", "w") as f:
+    f.write(answer)
+"""
+
+#practice3
+list_a = [["Top Gun", "Risky Business", "Minority Report"], ["Titanic","The Revenant",
+          "Inception"], ["Training Day", "Man on Fire", "Flight"]]
+
+with open("list_a", "w", newline="") as f:
+    w = csv.writer(f, delimiter=",")
+    w.writerow(list_a[0])
+    w.writerow(list_a[1])
+    w.writerow(list_a[2])
+
+with open("list_a", "r") as f:
+    r = csv.reader(f, delimiter=",")
+    for row in r:
+        print(",".join(row))    
+
+"""
+import csv
+
+movies = [["Top Gun", "Risky Business", "Minority Report"], ["Titanic", "The Revenant", "Inception"], ["Training Day", "Man on Fire", "Flight"]]
+with open("movies.csv", "w") as csvfile:
+    spamwriter = csv.writer(csvfile, delimiter=",")
+    for movie_list in movies:
+        spamwriter.writerow(movie_list)
+"""
+
+#practice4
+list_b = [["トップ・ガン", "リスキー・ビジネス", "マイノリティ・リポート"], ["タイタニック", "レヴェナント", "インセプション"],
+          ["トレーニング・デイ", "マン・オン・ファイア", "フライト"]]
+
+with open("list_b", "w", newline="", encoding="utf-8") as f:
+    w = csv.writer(f, delimiter=",")
+    w.writerow(list_b[0])
+    w.writerow(list_b[1])
+    w.writerow(list_b[2])
+
+with open("list_b", "r") as f:
+    r = csv.reader(f, delimiter=",")
+    for row in r:
+        print(",".join(row))
